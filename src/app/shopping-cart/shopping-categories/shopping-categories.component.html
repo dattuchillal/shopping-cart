@@ -1,0 +1,32 @@
+<ng-container *ngIf="!isProductsAvailable">
+  <mat-spinner diameter="50"></mat-spinner>
+</ng-container>
+
+<ng-container *ngIf="isProductsAvailable">
+  <ng-container *ngFor="let product of categoriesProductDetails | keyvalue">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{product.key}}</mat-card-title>
+      </mat-card-header>
+      <div class="product-details">
+        <mat-card-content *ngFor="let productDetails of product.value[0]">
+          <div class="product-details-content">
+            <div class="product-block-1">
+              <div class="product-img">
+                <img src="../../../assets/products-images/{{productDetails.category}}.jpg"/>
+              </div>
+            </div>
+            <div class="product-block-2">
+              <div class="product-name"><h3>{{productDetails.name}}</h3></div>
+              <div class="product-price">{{productDetails.price | currency:'INR'}}</div>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="addPrice(productDetails.price)">Add To Cart</button>
+              </mat-card-actions>
+            </div>
+          </div>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </ng-container>
+</ng-container>
+

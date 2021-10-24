@@ -1,0 +1,64 @@
+$iconwidth: 56px;
+
+mat-toolbar {
+  position: fixed;
+  z-index: 99;
+  font-size: 12px;
+
+  .sidenav-toggle {
+    display: none;
+    padding: 0;
+    margin: 8px;
+    min-width: $iconwidth;
+
+    @media (max-width: 720px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    mat-icon {
+      font-size: 30px;
+      height: $iconwidth;
+      width: $iconwidth;
+      line-height: $iconwidth;
+      color: white;
+    }
+  }
+
+  .toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .toolbar-content-block-1 {
+      display: flex;
+
+      span {
+        padding-top: 20px;
+      }
+    }
+
+    .toolbar-content-block-2 {
+      padding-top: 17px;
+
+      button {
+        margin-left: 8px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 85%;
+      font-size: 20px;
+      .toolbar-content-block-1 {
+        span {
+          padding-top: 0;
+        }
+      }
+
+      .toolbar-content-block-2 {
+        padding-top: 0;
+      }
+    }
+  }
+}
